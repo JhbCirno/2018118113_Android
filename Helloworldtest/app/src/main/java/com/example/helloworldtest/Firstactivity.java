@@ -39,7 +39,7 @@ public class Firstactivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View V) {
-               Intent intent = new Intent(Firstactivity.this,Firstactivity.class);
+               Intent intent = new Intent(Firstactivity.this,secondactivity.class);
             }
         });
         button1.setOnClickListener(new View.OnClickListener(){
@@ -49,5 +49,10 @@ public class Firstactivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-}
+    }
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+        Log.d("Firstactivity","onRestart");
+    }
 }
