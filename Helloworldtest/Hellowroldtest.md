@@ -6,3 +6,16 @@ standard模式时活动的默认启动模式
 
 代码：
 ```java
+   protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.d("FirstActivity",this.toString());
+        setContentView(R.layout.first_layout);
+        Button button1 = (Button) findViewById(R.id.button);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View V) {
+               Intent intent = new Intent(Firstactivity.this,secondactivity.class);
+               startActivity(intent);
+            }
+        });
+```
