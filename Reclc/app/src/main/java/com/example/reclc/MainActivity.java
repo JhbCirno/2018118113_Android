@@ -15,8 +15,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initPeople();
         PeopleAdapter adapter = new PeopleAdapter(
-                MainActivity.this, R.layout.people_item, peopleList);
+                MainActivity.this, R.layout.people_item,peopleList);
         ListView listView = (ListView)findViewById(R.id.list_view);
         listView.setAdapter(adapter);
     }

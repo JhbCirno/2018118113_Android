@@ -21,8 +21,13 @@ public class PeopleAdapter extends ArrayAdapter<people> {
     @Override
     public View getView(int position,View convertView, ViewGroup parent){
         people people = getItem(position);
-        View view = LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
-        ImageView peopleImage = (ImageView)view.findViewById(R.id.people_image);
+        View view;
+        if (convertView ==null){
+            view = LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
+        }else{
+            view = convertView;
+        }
+       ImageView peopleImage = (ImageView)view.findViewById(R.id.people_image);
         TextView peopleText = (TextView)view.findViewById(R.id.people_name);
         peopleImage.setImageResource(people.getImageId());
         peopleText.setText(people.getName());
