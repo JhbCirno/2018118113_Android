@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
     }
     private void initPeople(){
-        for (int i=0;i<2;i++){
+        for (int i=0;i<1;i++){
             people max = new people("max",R.drawable.makesi);
             peopleList.add(max);
             people liening = new people("liening",R.drawable.liening);
