@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyceler"
+        android:id="@+id/recyceler1"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>
