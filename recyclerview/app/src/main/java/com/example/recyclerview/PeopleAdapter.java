@@ -7,16 +7,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
 public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder>{
     private List<people> mpeopleList;
     static class ViewHolder extends RecyclerView.ViewHolder{
+        View peopleView;
         ImageView peopleImage;
         TextView peoplename;
         public ViewHolder(View view){
             super(view);
+            peopleView = view;
             peopleImage=(ImageView)view.findViewById(R.id.people_image);
             peoplename=(TextView)view.findViewById(R.id.people_text);
         }
@@ -27,7 +30,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent,int viewType){
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.people_item,parent,false);
-        ViewHolder holder = new ViewHolder(view);
+       final ViewHolder holder = new ViewHolder(view);
         return holder;
     }
     @Override
