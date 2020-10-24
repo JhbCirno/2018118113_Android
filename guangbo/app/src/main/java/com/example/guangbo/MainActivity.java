@@ -12,24 +12,27 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-private IntentFilter intentFilter;
-private NetworkChangeRecevier networkChangeRecevier;
+    private IntentFilter intentFilter;
+    private NetworkChangeRecevier networkChangeRecevier;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        intentFilter =
+        intentFilter = new IntentFilter();
+        intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+        networkChangeRecevier = new NetworkChangeRecevier();
+        registerReceiver(networkChangeRecevier, intentFilter);
     }
-    class NetworkChangeRecevier extends BroadcastReceiver{
+    protected void onDestory() {
+        super.onDestroy();
+        unregisterReceiver(networkChangeRecevier);
+    }
+
+    class NetworkChangeRecevier extends BroadcastReceiver {
         @Override
-        public void onReceive(Context context, Intent intent){
-            ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(context.CONNECTIVITY_SERVICE);
-            NetworkInfo networkInfo = connectionManager
-            if (networkInfo != null &&networkInfo.isAvailable()){
-                Toast.makeText(context,"network is available",Toast.LENGTH_SHORT).show();
-            }else{
-                Toast.makeText(context,"network is unavable",Toast.LENGTH_SHORT).show();
-            }
+        public void onReceive(Context context, Intent intent) {
+            Toast.makeText(context, "network changes", Toast.LENGTH_SHORT).show();
         }
     }
 }
