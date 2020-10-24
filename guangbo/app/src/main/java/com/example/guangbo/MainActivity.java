@@ -28,11 +28,16 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
         unregisterReceiver(networkChangeRecevier);
     }
-
-    class NetworkChangeRecevier extends BroadcastReceiver {
+    class NetworkChangeRecevier extends BroadcastReceiver{
         @Override
-        public void onReceive(Context context, Intent intent) {
-            Toast.makeText(context, "network changes", Toast.LENGTH_SHORT).show();
+        public void onReceive(Context context, Intent intent){
+            ConnectivityManager connectionManager = (ConnectivityManager)getSystemService(context.CONNECTIVITY_SERVICE);
+            NetworkInfo networkInfo = connectionManager.getActiveNetworkInfo();
+            if (networkInfo != null &&networkInfo.isAvailable()){
+                Toast.makeText(context,"network is available",Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(context,"network is unavable",Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }
