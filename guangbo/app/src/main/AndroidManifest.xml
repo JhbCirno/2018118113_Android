@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Secondactivity"></activity>
+        <activity android:name=".thirdactivity"></activity>
+        <activity android:name=".Secondactivity" />
 
         <receiver
             android:name=".MyBoradcastReceiver"
