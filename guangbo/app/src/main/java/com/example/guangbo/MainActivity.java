@@ -16,13 +16,13 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private IntentFilter intentFilter;
-   /*private NetworkChangeRecevier networkChangeRecevier;*/
+  private NetworkChangeRecevier networkChangeRecevier;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+/*收集自定义广播*/
         Button button = (Button)findViewById(R.id.button1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,8 +31,17 @@ public class MainActivity extends AppCompatActivity {
                 intent.setComponent(new ComponentName("com.example.guangbo","com.example.guangbo.MyBoradcastReceiver"));
                 sendBroadcast(intent);
             }
-        });}
-/*
+        });
+/* 跳转页面 */
+        Button button2 = (Button)findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Secondactivity.class);
+                startActivity(intent);
+            }
+        });
+
         intentFilter = new IntentFilter();
         intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
         networkChangeRecevier = new NetworkChangeRecevier();
@@ -53,5 +62,5 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(context,"network is unavable",Toast.LENGTH_SHORT).show();
             }
         }
-    }*/
+    }
 }

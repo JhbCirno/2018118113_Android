@@ -8,7 +8,12 @@
         android:id="@+id/button1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="114514"
+        android:text="自定义广播"
         />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="有序广播"/>
 
 </LinearLayout>

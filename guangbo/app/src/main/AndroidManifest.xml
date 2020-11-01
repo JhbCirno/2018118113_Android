@@ -12,12 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Secondactivity"></activity>
+
         <receiver
             android:name=".MyBoradcastReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.example.guangbo.MY_BROADCAST"/>
+                <action android:name="com.example.guangbo.MY_BROADCAST" />
             </intent-filter>
         </receiver>
         <receiver
