@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+/*启动app发广播*/
         intentFilter = new IntentFilter();
         intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
         networkChangeRecevier = new NetworkChangeRecevier();
