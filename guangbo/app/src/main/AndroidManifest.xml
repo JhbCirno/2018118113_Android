@@ -15,10 +15,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".thirdactivity"></activity>
         <activity android:name=".Secondactivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <receiver
             android:name=".BaseActivity$ForceOfflineReceiver"
