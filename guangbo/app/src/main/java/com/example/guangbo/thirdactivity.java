@@ -19,7 +19,7 @@ public class thirdactivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent("com.example.guangbo.FORCE_OFFLINE");
-                intent.setComponent(new ComponentName("com.example.guangbo","com.example.guangbo.DOWN"));
+                sendBroadcast(intent);
             }
         });
     }
