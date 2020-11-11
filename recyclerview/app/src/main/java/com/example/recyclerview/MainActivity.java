@@ -47,7 +47,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        Button button3 = (Button)findViewById(R.id.percent);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,percent.class);
+                
+            }
+        });
         initPeople();
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recyceler1);
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL);
