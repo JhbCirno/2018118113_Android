@@ -3,7 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
+    <Button
+        android:id="@+id/buttion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="linearLayout"
+        />
+<Button
+    android:id="@+id/relative"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="relative"/>
+    <Button
+        android:id="@+id/Frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="frame"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyceler1"
         android:layout_width="match_parent"
