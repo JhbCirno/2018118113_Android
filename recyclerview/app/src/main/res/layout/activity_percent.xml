@@ -5,32 +5,5 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
   >
-    <TextView
-        app:layout_widthPercent="50%"
-        app:layout_heightPercent="50%"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="@color/colorPrimary"/>
-
-    <TextView
-        app:layout_widthPercent="50%"
-        app:layout_heightPercent="50%"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:background="@color/colorAccent"/>
-
-    <TextView
-        app:layout_widthPercent="50%"
-        app:layout_heightPercent="50%"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorAccent"/>
-
-    <TextView
-        app:layout_widthPercent="50%"
-        app:layout_heightPercent="50%"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"/>
 
 </androidx.percentlayout.widget.PercentFrameLayout>
