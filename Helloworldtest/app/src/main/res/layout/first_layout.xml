@@ -8,4 +8,14 @@
         android:layout_width="match_parent"
         android:layout_height="73dp"
         android:text="Helloworld1" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="xianintent"/>
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="yingIntent"/>
 </LinearLayout>

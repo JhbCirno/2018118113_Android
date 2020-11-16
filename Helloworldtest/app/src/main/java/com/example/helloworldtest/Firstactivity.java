@@ -35,6 +35,14 @@ public class Firstactivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Log.d("FirstActivity","Task id is"+getTaskId());
         setContentView(R.layout.first_layout);
+        Button button2 = (Button)findViewById(R.id.button2);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Firstactivity.this,xianIntent.class);
+                startActivity(intent);
+            }
+        });
         Button button1 = (Button) findViewById(R.id.button);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +54,14 @@ public class Firstactivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(Firstactivity.this,secondactivity.class);
+                startActivity(intent);
+            }
+        });
+        Button button3 = (Button) findViewById(R.id.button3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent("com.example.helloworldtest.ACTION_START");
                 startActivity(intent);
             }
         });
