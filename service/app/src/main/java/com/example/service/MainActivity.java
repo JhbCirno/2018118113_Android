@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch(v.getId()){
             case R.id.button1:
                 Intent startIntent = new Intent(this,MyService.class);
-                startActivity(startIntent);
+                startService(startIntent);
                 break;
             case R.id.button2:
                 Intent stopIntent = new Intent(this,MyService.class);
