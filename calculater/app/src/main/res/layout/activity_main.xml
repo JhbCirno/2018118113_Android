@@ -135,9 +135,7 @@
             android:id="@+id/main_btn1a"
             android:layout_width="90dp"
             android:layout_height="71dp"
-            android:layout_row="0"
             android:layout_rowSpan="2"
-            android:layout_column="19"
             android:layout_gravity="fill_vertical"
             android:text="+" />
 
