@@ -52,10 +52,10 @@
             />
 
         <Button
-            android:id="@+id/main_btnc"
+            android:id="@+id/main_btndel"
             android:layout_width="90dp"
             android:layout_height="60dp"
-            android:text="/"
+            android:text="del"
             />
 
         <Button
@@ -104,10 +104,10 @@
             />
 
         <Button
-            android:id="@+id/main_btndel"
+            android:id="@+id/main_btnc"
             android:layout_width="90dp"
             android:layout_height="60dp"
-            android:text="del"
+            android:text="/"
             />
 
         <Button
@@ -134,8 +134,7 @@
         <Button
             android:id="@+id/main_btn1a"
             android:layout_width="90dp"
-            android:layout_height="71dp"
-            android:layout_rowSpan="2"
+            android:layout_height="60dp"
             android:layout_gravity="fill_vertical"
             android:text="+" />
 
@@ -143,7 +142,7 @@
             android:id="@+id/main_btn1d"
             android:layout_width="180dp"
             android:layout_height="60dp"
-            android:layout_columnSpan="3"
+            android:layout_columnSpan="4"
             android:layout_gravity="fill_horizontal"
             android:text="="
 
