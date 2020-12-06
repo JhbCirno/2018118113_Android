@@ -1,6 +1,10 @@
 package com.example.calculater;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Activity;
+import android.os.Handler;
+import android.os.Message;
 import android.text.Editable;
 import android.os.Bundle;
 import android.widget.Button;
@@ -31,17 +35,19 @@ import android.widget.TextView;
         private  Button main_btnc;  // /
         private  Button main_btnd;  //小数点
         private  Button main_btn1d;  //=
-
+        private int reclen = 0;
         //清除
         private  Button main_btndel;
-
+        private TextView textView;
         boolean clear_flag;//清空标识
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
-
+            /*创建textView用于使用计时器*/
+            textView = (TextView)findViewById(R.id.timetext);
+            new Thread(new Mythread()).start();
             //数字1-9
             View main_btn1 = findViewById(R.id.main_btn1);
             View main_btn2 = findViewById(R.id.main_btn2);
@@ -87,7 +93,33 @@ import android.widget.TextView;
             main_btnc.setOnClickListener(this);
             main_btn1d.setOnClickListener(this);
         }
+        /*计时器*/
+        final Handler handler = new Handler(){
+        public void handleMessage(Message msg){
+            switch(msg.what){
+                case 1:
+                    reclen++;
+                    textView.setText("计时"+reclen);
+            }
+            super.handleMessage(msg);
+        }
+        };
+        /*子线程用来运算使用时间*/
+        public class Mythread implements Runnable{
+            @Override
+            public void run(){
+                while(true){
+                    try{
+                        Thread.sleep(1000);
+                        Message message = new Message();
+                        message.what = 1;
+                        handler.sendMessage(message);
+                    }catch (Exception e){
 
+                    }
+                }
+            }
+        }
         //读取每个按钮的点击的内容
         @Override
         public void onClick(View view) {
