@@ -99,7 +99,7 @@ import android.widget.TextView;
             switch(msg.what){
                 case 1:
                     reclen++;
-                    textView.setText("计时"+reclen);
+                    textView.setText("计时器：                    "+reclen);
             }
             super.handleMessage(msg);
         }
