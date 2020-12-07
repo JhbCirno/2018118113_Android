@@ -185,6 +185,7 @@ import android.widget.TextView;
             clear_flag = true;
             double result = 0;
 
+
             //进行截取
             //运算符前的数字
             String s1 = exp.substring(0,exp.indexOf(" "));
