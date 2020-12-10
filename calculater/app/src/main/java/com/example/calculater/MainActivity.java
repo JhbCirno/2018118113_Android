@@ -40,7 +40,7 @@ import android.widget.TextView;
         private  Button main_btndel;
         private TextView textView;
         boolean clear_flag;//清空标识
-
+        //
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -93,7 +93,7 @@ import android.widget.TextView;
             main_btnc.setOnClickListener(this);
             main_btn1d.setOnClickListener(this);
         }
-        /*计时器*/
+        /*计时器的发送信息*/
         final Handler handler = new Handler(){
         public void handleMessage(Message msg){
             switch(msg.what){
