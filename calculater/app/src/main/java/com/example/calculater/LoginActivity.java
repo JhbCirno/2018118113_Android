@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 public class LoginActivity extends BaseActivity {
     //登录按钮
-    private Button login;
+    private Button login1;
     //登录输入框
     private EditText usernameEdit;
     private EditText passwordEdit;
@@ -18,19 +18,19 @@ public class LoginActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.manu);
-
         //登录
         usernameEdit = (EditText) findViewById(R.id.username);
         passwordEdit = (EditText)findViewById(R.id.password);
-        login = (Button)findViewById(R.id.login);
-        login.setOnClickListener(new View.OnClickListener() {
+        login1 = (Button)findViewById(R.id.login);
+        login1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String username = usernameEdit.getText().toString();
                 String password = passwordEdit.getText().toString();
-                if (password.equals("admin") && username.equals("123456")){
+                if (password.equals("123456") && username.equals("admin")){
                     Intent intent = new Intent(LoginActivity.this,MainActivity.class);
                     startActivity(intent);
+                    finish();
                 }else{
                     Toast.makeText(LoginActivity.this,"账号或密码错误请重新输入",Toast.LENGTH_SHORT).show();
                 }
