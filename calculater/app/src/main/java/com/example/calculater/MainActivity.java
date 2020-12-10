@@ -3,6 +3,7 @@ package com.example.calculater;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
@@ -40,14 +41,22 @@ import android.widget.TextView;
         private  Button main_btndel;
         private TextView textView;
         boolean clear_flag;//清空标识
-        //
+        //登录按钮
+        private Button login;
+        //登录输入框
+        private EditText usernameEdit;
+        private EditText passwordEdit;
+
+        //主程序
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
+
             /*创建textView用于使用计时器*/
             textView = (TextView)findViewById(R.id.timetext);
             new Thread(new Mythread()).start();
+
             //数字1-9
             View main_btn1 = findViewById(R.id.main_btn1);
             View main_btn2 = findViewById(R.id.main_btn2);
@@ -59,6 +68,7 @@ import android.widget.TextView;
             View main_btn8 = findViewById(R.id.main_btn8);
             View main_btn9 = findViewById(R.id.main_btn9);
             View main_btn0 = findViewById(R.id.main_btn0);
+
             //运算符
             View main_btn1a = findViewById(R.id.main_btn1a);// +
             View main_btnj = findViewById(R.id.main_btnj);// -
