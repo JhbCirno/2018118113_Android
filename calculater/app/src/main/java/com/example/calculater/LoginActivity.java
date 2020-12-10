@@ -13,7 +13,7 @@ public class LoginActivity extends BaseActivity {
     //登录输入框
     private EditText usernameEdit;
     private EditText passwordEdit;
-}
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,4 +36,5 @@ public class LoginActivity extends BaseActivity {
                 }
             }
         });
+    }
 }

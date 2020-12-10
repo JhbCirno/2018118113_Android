@@ -41,12 +41,6 @@ import android.widget.TextView;
         private  Button main_btndel;
         private TextView textView;
         boolean clear_flag;//清空标识
-        //登录按钮
-        private Button login;
-        //登录输入框
-        private EditText usernameEdit;
-        private EditText passwordEdit;
-
         //主程序
         @Override
         protected void onCreate(Bundle savedInstanceState) {
