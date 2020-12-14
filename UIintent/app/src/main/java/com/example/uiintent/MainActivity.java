@@ -28,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         mDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+
         NavigationView navView = (NavigationView)findViewById(R.id.nav_view);
+
         ActionBar actionBar = getSupportActionBar();
         if(actionBar !=null){
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         navView.setCheckedItem(R.id.nav_call);
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
                 mDrawerLayout.closeDrawers();
                 return true;
             }
