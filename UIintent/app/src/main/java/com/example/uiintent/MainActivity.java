@@ -1,5 +1,6 @@
 package com.example.uiintent;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -11,6 +12,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.GridLayout;
 import android.widget.Toast;
+
+import com.google.android.material.navigation.NavigationView;
 
 import java.text.BreakIterator;
 
@@ -25,12 +28,20 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         mDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+        NavigationView navView = (NavigationView)findViewById(R.id.nav_view);
         ActionBar actionBar = getSupportActionBar();
         if(actionBar !=null){
             actionBar.setDisplayHomeAsUpEnabled(true);
             actionBar.setHomeAsUpIndicator(R.drawable.ic_mune);
         }
-
+        navView.setCheckedItem(R.id.nav_call);
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                mDrawerLayout.closeDrawers();
+                return true;
+            }
+        });
     }
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.toolbar,menu);
