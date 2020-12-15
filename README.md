@@ -12,4 +12,8 @@
 
 第六次实验（下载示例）：https://github.com/JhbCirno/2018118113_Android/tree/master/service
 
+第七次作业（子线程）：https://github.com/JhbCirno/2018118113_Android/tree/master/uiTHREAD
+
+第八次作业（UI）：https://github.com/JhbCirno/2018118113_Android/tree/master/UIintent
+
 大作业（计算器）：https://github.com/JhbCirno/2018118113_Android/tree/master/calculater
