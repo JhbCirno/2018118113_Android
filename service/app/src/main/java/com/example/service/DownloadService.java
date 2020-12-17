@@ -12,6 +12,8 @@ import android.os.IBinder;
 
 import android.widget.Toast;
 
+import androidx.core.app.NotificationCompat;
+
 import java.io.File;
 
 public class DownloadService extends Service {
