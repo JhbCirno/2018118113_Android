@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         switch (v.getId()){
             case R.id.start_download:
-                String url = "https://d1.music.126.net/dmusic/cloudmusicsetup2.7.4.198374.exe";
+                String url = "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1438840060,511628845&fm=26&gp=0.jpg";
                 downloadBinder.startDownload(url);
                 break;
             case R.id.pause_download:
