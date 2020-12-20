@@ -50,12 +50,14 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
 
 
-
+//创建Toolbar
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.fab);
 
+//创建悬浮按钮
+        FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.fab);
+//悬浮按钮的点击事件
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

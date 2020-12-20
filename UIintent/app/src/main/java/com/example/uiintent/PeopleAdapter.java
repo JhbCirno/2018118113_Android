@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import org.w3c.dom.Text;
 
 import java.util.List;
@@ -33,7 +35,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder
     }
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent , int viewType){
-        if(mPeople == null){
+        if(mContext == null){
             mContext = parent.getContext();
         }
         View view = LayoutInflater.from(mContext).inflate(R.layout.people_item,parent, false);
@@ -41,7 +43,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder
     }
     public void onBindViewHolder(ViewHolder holder,int postion){
         People people = mPeople.get(postion);
-        holder.imageView.setImageResource(people.getImageid());
+        Glide.with(mContext).load(people.getImageid()).into(holder.imageView);
         holder.name.setText(people.getName());
     }
     @Override
