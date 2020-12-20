@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -19,14 +21,36 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.text.BreakIterator;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout mDrawerLayout;
+    //定义人物列表
+    private People[] people = {new People("max",R.drawable.max),new People("zhouenlai",R.drawable.enlai),
+    new People("sidalin",R.drawable.sidalin), new People("maozedong",R.drawable.zedong),
+    new People("liening",R.drawable.liening),new People("engesi",R.drawable.engesi)};
+    //创建人物表
+    private List<People> peopleList = new ArrayList<>();
+    //建立People的Recycleview的接收器
+    private PeopleAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+       //在onCreate中创建功能的启动和映射
+        initPeople();
+        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        GridLayoutManager layoutManager = new GridLayoutManager(this , 2);
+        recyclerView.setLayoutManager(layoutManager);
+        adapter = new PeopleAdapter(peopleList);
+        recyclerView.setAdapter(adapter);
+
+
+
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar1);
         setSupportActionBar(toolbar);
 
@@ -85,4 +109,13 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
+    private void initPeople(){
+        peopleList.clear();
+        for (int i = 0; i < 50 ;i++){
+            Random random = new Random();
+            int index = random.nextInt(people.length);
+            peopleList.add(people[index]);
+        }
+    }
+
 }
