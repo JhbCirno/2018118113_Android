@@ -8,6 +8,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
 import android.view.Menu;
@@ -27,6 +28,8 @@ import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity {
+    private SwipeRefreshLayout swipeRefreshLayout;
+
     private DrawerLayout mDrawerLayout;
     //定义人物列表
     private People[] people = {new People("max",R.drawable.max),new People("zhouenlai",R.drawable.enlai),
@@ -41,6 +44,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //下拉刷新
+        swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.swipeRefresh);
+        swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refreshPeople();
+            }
+        });
+
+
        //在onCreate中创建功能的启动和映射
         initPeople();
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
@@ -88,10 +103,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.toolbar,menu);
         return true;
     }
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
@@ -111,6 +130,8 @@ public class MainActivity extends AppCompatActivity {
         }
         return true;
     }
+
+
     private void initPeople(){
         peopleList.clear();
         for (int i = 0; i < 50 ;i++){
@@ -119,5 +140,28 @@ public class MainActivity extends AppCompatActivity {
             peopleList.add(people[index]);
         }
     }
+
+
+    private void refreshPeople(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(2000);
+                }catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        initPeople();
+                        adapter.notifyDataSetChanged();
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                });
+            }
+        }).start();
+    }
+
 
 }
