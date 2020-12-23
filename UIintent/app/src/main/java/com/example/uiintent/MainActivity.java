@@ -10,16 +10,23 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.app.Notification;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.GridLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
+
+import org.w3c.dom.Text;
 
 import java.text.BreakIterator;
 import java.util.ArrayList;
@@ -29,7 +36,6 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     private SwipeRefreshLayout swipeRefreshLayout;
-
     private DrawerLayout mDrawerLayout;
     //定义人物列表
     private People[] people = {new People("max",R.drawable.max),new People("zhouenlai",R.drawable.enlai),
@@ -44,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         //下拉刷新
         swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.swipeRefresh);
         swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary);

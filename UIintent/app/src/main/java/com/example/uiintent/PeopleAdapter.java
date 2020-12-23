@@ -1,6 +1,7 @@
 package com.example.uiintent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +40,19 @@ public class PeopleAdapter extends RecyclerView.Adapter<PeopleAdapter.ViewHolder
             mContext = parent.getContext();
         }
         View view = LayoutInflater.from(mContext).inflate(R.layout.people_item,parent, false);
-        return new ViewHolder(view);
+        final ViewHolder holder = new ViewHolder(view);
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int postion = holder.getAdapterPosition();
+                People people = mPeople.get(postion);
+                Intent intent =new Intent(mContext,PeopleActivity.class);
+                intent.putExtra(PeopleActivity.PEOPLE_NAME,people.getName());
+                intent.putExtra(PeopleActivity.PEOPLE_IMAGE_ID,people.getImageid());
+                mContext.startActivity(intent);
+            }
+        });
+        return holder;
     }
     public void onBindViewHolder(ViewHolder holder,int postion){
         People people = mPeople.get(postion);
