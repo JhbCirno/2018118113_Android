@@ -21,10 +21,12 @@
 
 第六次实验报告：https://github.com/JhbCirno/2018118113_Android/tree/master/service
 
-第七次作业（子线程）：https://github.com/JhbCirno/2018118113_Android/tree/master/uiTHREAD
+第七次实验（子线程）：https://github.com/JhbCirno/2018118113_Android/tree/master/uiTHREAD
 
 第七次实验报告：https://github.com/JhbCirno/2018118113_Android/tree/master/uiTHREAD
 
-第八次作业（UI）：https://github.com/JhbCirno/2018118113_Android/tree/master/UIintent
+第八次实验（UI）：https://github.com/JhbCirno/2018118113_Android/tree/master/UIintent
+
+第八次实验报告：https://github.com/JhbCirno/2018118113_Android/blob/master/UIintent/%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A.md
 
 大作业（计算器）：https://github.com/JhbCirno/2018118113_Android/tree/master/calculater
