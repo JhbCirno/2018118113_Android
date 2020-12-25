@@ -3,6 +3,10 @@ package com.example.calculater;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
@@ -16,7 +20,6 @@ import android.widget.TextView;
     public class MainActivity extends BaseActivity implements View.OnClickListener {
         //    结果集
         private EditText editText;
-
         //数字1-9
         private Button main_btn1;
         private Button main_btn2;
@@ -46,6 +49,16 @@ import android.widget.TextView;
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
+
+            /*强制下线功能*/
+            Button forceOffline = (Button)findViewById(R.id.Off);
+            forceOffline.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent("com.example.calculater.FORCE_OFFLINE");
+                    sendBroadcast(intent);
+                }
+            });
 
             /*创建textView用于使用计时器*/
             textView = (TextView)findViewById(R.id.timetext);
@@ -104,6 +117,9 @@ import android.widget.TextView;
                 case 1:
                     reclen++;
                     textView.setText("计时器：                    "+reclen);
+                    if (reclen>=10){
+                        textView.setText("已经过了10s了");
+                    }
             }
             super.handleMessage(msg);
         }
@@ -249,4 +265,5 @@ import android.widget.TextView;
             }
 
         }
+
     }
